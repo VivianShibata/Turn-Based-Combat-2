@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "BDQuiz",
+"language": "GDScript",
+"path": "res://Scripts/Quiz/bd_quiz.gd"
+}, {
+"base": "Resource",
+"class": "QuizQuestion",
+"language": "GDScript",
+"path": "res://Scripts/Quiz/resource_quesions.gd"
+} ]
+_global_script_class_icons={
+"BDQuiz": "",
+"QuizQuestion": ""
+}
+
+[application]
+
+config/name="Turn Based Combat"
+run/main_scene="res://TurnBasedCombat.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+GlobalVariables="*res://Scripts/Combat/Global Variables.gd"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
