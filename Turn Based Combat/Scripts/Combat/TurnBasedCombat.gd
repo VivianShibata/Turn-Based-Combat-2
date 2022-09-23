@@ -45,7 +45,7 @@ func _ready() -> void:
 	yield(self, "textbox_closed")
 	$ColorRect2/question_holder.show()
 	
-	
+	$ColorRect/Fight.show()
 	for _button in $ColorRect2/question_holder.get_children(): #fazendo uma interação dentro dos buttons do nó quesiton holder
 		buttons.append(_button) # adiciona os botões filhos do nó
 	
@@ -64,12 +64,12 @@ func display_text(text):
 	$Textbox/Label.text = text
 
 
-#func _on_Fight_pressed(): #starting the fight // começando a luta
-#	if $ColorRect2.visible == false:
-#		$ColorRect2.visible = true
-#	$ColorRect/Fight.visible = false
-#	$Textbox.show()
-#	question_texts.text = str(quiz_shuffle[index].question_info) # declarando que question_text vai receber a var bd do nosso bd_quiz, precisamos declarar qual o item e fazemos pelo index, depois pegamos o texto através da question_info definada no script "res_question" que exporta as variaves das perguntas
+func _on_Fight_pressed(): #starting the fight // começando a luta
+	if $ColorRect2.visible == false:
+		$ColorRect2.visible = true
+	$ColorRect/Fight.visible = false
+	$Textbox.show()
+	question_texts.text = str(quiz_shuffle[index].question_info) # declarando que question_text vai receber a var bd do nosso bd_quiz, precisamos declarar qual o item e fazemos pelo index, depois pegamos o texto através da question_info definada no script "res_question" que exporta as variaves das perguntas
 	
 #func _input(event):   #to make the text box dissapear when pressing space or mouse
 #	if (Input.is_action_pressed("ui_accept") or Input.is_mouse_button_pressed(BUTTON_LEFT) and ///.visible)
